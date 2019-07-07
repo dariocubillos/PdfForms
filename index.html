@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='node_modules/pdfmake/build/pdfmake.js'></script>
+ <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+var dd = {
+	content: [
+    {text: 'Examen', style: 'header'},
+  		'Official documentation is in progress, this document is just a glimpse of what is possible with pdfmake and its layout engine.',
+  		{text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'subheader'},
+  		'The following table has nothing more than a body array',
+  		{
+  			style: 'tableExample',
+  			table: {
+          widths: [500],
+  				body: [
+  					['Column 1'],
+  					['One value goes here', ]
+  				]
+  			}
+  		}
+  ], styles: {
+		header: {
+			fontSize: 18,
+			bold: true,
+      alignment: 'justify'
+		},
+		subheader: {
+			fontSize: 16,
+			bold: true,
+			margin: [0, 10, 0, 5]
+		},
+		tableExample: {
+			margin: [0, 0, 0, 0]
+		},
+		tableHeader: {
+			bold: true,
+			fontSize: 13,
+			color: 'black'
+		}
+	},
+	defaultStyle: {
+		// alignment: 'justify'
+	}
+}
+
+pdfMake.createPdf(dd).open(); //put here the content of your document
+
+</script>
+  </body>
+</html>
