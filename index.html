@@ -5,45 +5,170 @@
     <title></title>
     <script src='node_modules/pdfmake/build/pdfmake.js'></script>
  <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js"></script>
+
   </head>
   <body>
 
 <script type="text/javascript">
+var allpages = null;
+var numero ="" , nino_adulto ="", fecha="" , grado_actual ="", grado_subir="" ,
+    nombre_completo="", fecha_nacimiento="" , edad="", dir_particular="" ,
+    telefono_particular="" , edo_civil="" , ocupacion_prof="" ,  fecha_exm_ant_aprov ="",
+    fecha_ingreso="" , practicando="" , doyangpertenece="" , nombre_profesor="" , clases_faltas="";
+var netxtpage='after';
+
+var pages = {  content: [
+
+ {text: 'MOONMOO WON - MOO DUK KWAN', style: 'header', alignment:'center' },
+  {text: 'SOLICITUD DE EXAMEN KUPS', style: 'header', alignment:'center' },
+  {text: '(YUKUPYA SIMSA) \n \n', style: 'header', alignment:'center' },
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*','*'],
+        body: [
+                [{text: 'No.', alignment:'center'}, {text: 'Niño/Adulto', alignment:'center'}, {text: 'Fecha: ', alignment:'center'}],
+                  [
+                    numero,
+                    nino_adulto,
+                    fecha,
+                  ]
+              ]
+            }
+  },
+"\n",
+"\n",
+"\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*'],
+        body: [
+                [{text: 'Grado Actual: ', alignment:'center'},{text: 'Grado Subir: ', alignment:'center'}],
+                  [
+                    grado_actual,
+                    grado_subir,
+                  ]
+              ]
+            }
+  },
+"\n",
+"\n",
+"\n",
+  {
+      style: '',
+      table: {
+          widths: ['*'],
+        body: [
+                [{text: 'Nombre Completo', alignment:'center'}],
+                  [
+                    nombre_completo,
+                  ]
+              ]
+            }
+  },
+  "\n",
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: [120,50,'*'],
+        body: [
+                [{text: 'Fecha de nacimiento', alignment:'center'},{text: 'Edad', alignment:'center'},{text: 'Direccion Particular', alignment:'center'}],
+                  [
+                    fecha_nacimiento,
+                    edad,
+                    dir_particular
+                  ]
+              ]
+            }
+  },
+  "\n",
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*','*'],
+        body: [
+                [{text: 'Telefono Particular', alignment:'center'},{text: 'Edo. Civil', alignment:'center'},{text: 'Ocupacion/Profesión', alignment:'center'}],
+                  [
+                    telefono_particular,
+                    edo_civil,
+                    ocupacion_prof
+                  ]
+              ]
+            }
+  },
+  "\n",
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*','*'],
+        body: [
+                [{text: 'Fecha De Examen Anterior Aprobado', alignment:'center'},{text: 'Fecha Ingreso', alignment:'center'},{text: 'Practicando', alignment:'center'}],
+                  [
+                    fecha_exm_ant_aprov,
+                    fecha_ingreso,
+                    practicando
+                  ]
+              ]
+            }
+  },
+  "\n",
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*','*'],
+        body: [
+                [{text: 'Doyang Al Que Pertenece', alignment:'center'},{text: 'Nombre Del Profesor', alignment:'center'},{text: 'Clases/Faltas', alignment:'center'}],
+                  [
+                    doyangpertenece,
+                    nombre_profesor,
+                    clases_faltas
+                  ]
+              ]
+            }
+  },
+  "\n",
+  "\n",
+  "\n",
+  {
+      style: '',
+      table: {
+          widths: ['*','*'],
+        body: [
+                [{text: 'Firma Del Profesor', alignment:'center'},{text: 'Firma Del Alumno', alignment:'center'}],
+                  [
+                    "",
+                    ""
+                  ]
+              ]
+            }, pageBreak: netxtpage
+  }
+] };
+
+
+
+
 
 var dd = {
-	content: [
-    {text: 'Examen', style: 'header'},
-  		'Official documentation is in progress, this document is just a glimpse of what is possible with pdfmake and its layout engine.',
-  		{text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'subheader'},
-  		'The following table has nothing more than a body array',
-  		{
-  			style: 'tableExample',
-  			table: {
-          widths: [500],
-  				body: [
-  					['Column 1'],
-  					['One value goes here', ]
-  				]
-  			}
-  		}
+	content: [  pages.content
+
   ], styles: {
-		header: {
+
+  	header: {
 			fontSize: 18,
 			bold: true,
-      alignment: 'justify'
-		},
-		subheader: {
-			fontSize: 16,
-			bold: true,
-			margin: [0, 10, 0, 5]
-		},
-		tableExample: {
-			margin: [0, 0, 0, 0]
-		},
-		tableHeader: {
-			bold: true,
-			fontSize: 13,
-			color: 'black'
+			alignment: 'justify'
 		}
 	},
 	defaultStyle: {
