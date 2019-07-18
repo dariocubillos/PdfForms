@@ -43,131 +43,217 @@ for (var i = 0; i < numpages; i++) {
     {
         style: '',
         table: {
-            widths: ['*','*','*'],
+          	headerRows: 1,
+            widths: [200,200,100],
           body: [
-                  [{text: 'No.', alignment:'center'}, {text: 'Niño/Adulto', alignment:'center'}, {text: 'Fecha: ', alignment:'center'}],
+                  [{text: 'No.' }, {text: 'Niño/Adulto:'}, {text: 'Fecha:'}],
                     [
-                      numero,
-                      nino_adulto,
-                      fecha,
+                      "",
+                      "",
+                      "",
                     ]
                 ]
-              }
+              },
+        layout: 'headerLineOnly'
     },
-  "\n",
   "\n",
   "\n",
     {
         style: '',
         table: {
+          headerRows: 1,
             widths: ['*','*'],
           body: [
-                  [{text: 'Grado Actual: ', alignment:'center'},{text: 'Grado Subir: ', alignment:'center'}],
+                  [{text: 'Grado Actual: '+'KUP'},{text: 'Grado Subir: '+'KUP'}],
                     [
-                      grado_actual,
-                      grado_subir,
+                      "",
+                      "",
                     ]
                 ]
-              }
+              },
+        layout: 'headerLineOnly'
     },
   "\n",
   "\n",
-  "\n",
     {
         style: '',
         table: {
-            widths: ['*'],
-          body: [
-                  [{text: 'Nombre Completo', alignment:'center'}],
-                    [
-                      nombre_completo,
-                    ]
-                ]
-              }
-    },
-    "\n",
-    "\n",
-    "\n",
-    {
-        style: '',
-        table: {
-            widths: [120,50,'*'],
-          body: [
-                  [{text: 'Fecha de nacimiento', alignment:'center'},{text: 'Edad', alignment:'center'},{text: 'Direccion Particular', alignment:'center'}],
-                    [
-                      fecha_nacimiento,
-                      edad,
-                      dir_particular
-                    ]
-                ]
-              }
-    },
-    "\n",
-    "\n",
-    "\n",
-    {
-        style: '',
-        table: {
+          headerRows: 1,
             widths: ['*','*','*'],
           body: [
-                  [{text: 'Telefono Particular', alignment:'center'},{text: 'Edo. Civil', alignment:'center'},{text: 'Ocupacion/Profesión', alignment:'center'}],
+                  [{text: ''},{text: ''},{text: ''}],
                     [
-                      telefono_particular,
-                      edo_civil,
-                      ocupacion_prof
+                      {text: 'NOMBRE' , alignment:'center'},
+                      {text: 'APELLIDO PATERNO' , alignment:'center'},
+                      {text: 'APELLIDO MATERNO' , alignment:'center'},
                     ]
                 ]
-              }
+              },
+              layout: 'headerLineOnly'
     },
-    "\n",
     "\n",
     "\n",
     {
         style: '',
         table: {
-            widths: ['*','*','*'],
+          headerRows: 1,
+          widths: [400,100],
           body: [
-                  [{text: 'Fecha De Examen Anterior Aprobado', alignment:'center'},{text: 'Fecha Ingreso', alignment:'center'},{text: 'Practicando', alignment:'center'}],
-                    [
-                      fecha_exm_ant_aprov,
-                      fecha_ingreso,
-                      practicando
-                    ]
-                ]
-              }
-    },
-    "\n",
-    "\n",
-    "\n",
-    {
-        style: '',
-        table: {
-            widths: ['*','*','*'],
-          body: [
-                  [{text: 'Doyang Al Que Pertenece', alignment:'center'},{text: 'Nombre Del Profesor', alignment:'center'},{text: 'Clases/Faltas', alignment:'center'}],
-                    [
-                      doyangpertenece,
-                      nombre_profesor,
-                      clases_faltas
-                    ]
-                ]
-              }
-    },
-    "\n",
-    "\n",
-    "\n",
-    {
-        style: '',
-        table: {
-            widths: ['*','*'],
-          body: [
-                  [{text: 'Firma Del Profesor', alignment:'center'},{text: 'Firma Del Alumno', alignment:'center'}],
+                  [{text: 'Fecha de nacimiento:'},{text: 'Edad:'}],
                     [
                       "",
                       ""
                     ]
                 ]
-              }, pageBreak: netxtpage
+              },
+                layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*'],
+          body: [
+                  [{text: 'Direccion Particular:'}],
+                    [
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: [300,200],
+          body: [
+                  [{text: 'Telefono Particular:'},{text: 'Edo. Civil:'}],
+                    [
+                      "",
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*',],
+          body: [
+                  [{text: 'Ocupacion/Profesión:'}],
+                    [
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*'],
+          body: [
+                  [{text: 'Fecha De Examen Anterior Aprobado:'}],
+                    [
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: [300,200],
+          body: [
+                  [{text: 'Fecha Ingreso:'},{text: 'Practicando:'}],
+                    [
+                      "",
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*'],
+          body: [
+                  [{text: 'Doyang Al Que Pertenece:'}],
+                    [
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*'],
+          body: [
+                  [{text: 'Nombre Del Profesor:'}],
+                    [
+                      ""
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: [100,100],
+          body: [
+                  [{text: ''},{text: ''}],
+                    [
+                      {text: 'Clases', alignment:'center'},
+                      {text: 'Faltas', alignment:'center'}
+                    ]
+                ]
+              },
+              layout: 'headerLineOnly'
+    },
+    "\n",
+    "\n",
+    {
+        style: '',
+        table: {
+          headerRows: 1,
+          widths: ['*','*'],
+          body: [
+                  [{text: 'Firma Del Profesor:'},{text: 'Firma Del Alumno:'}],
+                    [
+                      "",
+                      ""
+                    ]
+                ]
+              }, layout: 'headerLineOnly', pageBreak: netxtpage
     },);
 }
 
